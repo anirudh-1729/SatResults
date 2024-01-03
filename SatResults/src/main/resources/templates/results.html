@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAT Results</title>
+</head>
+<body>
+
+<h2>SAT Results</h2>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>City</th>
+            <th>Country</th>
+            <th>Pincode</th>
+            <th>Score</th>
+            <th>Passed</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Iterate over the list of results and generate table rows -->
+        <tr th:each="result : ${results}">
+            <td th:text="${result.name}"></td>
+            <td th:text="${result.city}"></td>
+            <td th:text="${result.country}"></td>
+            <td th:text="${result.pincode}"></td>
+            <td th:text="${result.score}"></td>
+            <td th:text="${result.passed ? 'Passed' : 'Failed'}"></td>
+        </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
